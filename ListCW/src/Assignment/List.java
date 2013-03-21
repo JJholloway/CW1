@@ -1,6 +1,6 @@
 package Assignment;
 
-import java.util.*;
+
 
 
 public class List<T> {
@@ -8,9 +8,11 @@ public class List<T> {
 	private static final int INIT_LEN = 10;
 	private T[] items; // the actual items 
 	private int numItems; // the number of items currently in the list 
+	private int currentObject;
+	
 	
 	/*
-	 * Constructor: initialize the to be empty
+	 * Constructor: initialize the list to be empty
 	 */
 	
 	@SuppressWarnings("unchecked")
@@ -26,12 +28,23 @@ public class List<T> {
 	 */
 	
 	public void addToEnd(T obj){
-		if(items.length >10){
+		
+	
+		if(items.length>10){
 			System.out.println("you need to double the size of the array"); 
-		} //else 
-		items.add(new Object(obj));
+
+		} 
 		
-		
+		if(numItems == 0){
+			
+			items[numItems]=obj;
+			numItems++;
+			
+		}else{
+					
+			items[numItems]=obj;
+			numItems++;
+		}
 		
 	}
 		
@@ -42,27 +55,35 @@ public class List<T> {
 	
 	@Override 
 	public String toString(){
+		String result = "";
 		
-		String result = null;
-		
-		for(Object o : items){
-			 
+		for(T o : items){
+			 if(o == null){result = result + "[]";}else				 
 		result = result + ("["+ o + "] ");
 			
 		}
-		
-		//System.out.println(result);
+	
 		return result;
-		
-		
+				
 	}
+	
+	// lets have a go at the currentObject 
+	
+
+	
+
 	
 	
 	// lets create the main method 
 	
 	public static void main(String [] args){
 		
-		
-		
+		List<String>l = new List<>();
+	
+		l.addToEnd("Fred");
+		l.addToEnd("Betty");
+		l.addToEnd("Judith");
+		System.out.println(l);
+				
 	}
 }
