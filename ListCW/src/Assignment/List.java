@@ -30,9 +30,10 @@ public class List<T> {
 	public void addToEnd(T obj){
 		
 	
-		if(items.length>10){
+		if(numItems > items.length){
 			System.out.println("you need to double the size of the array"); 
-
+				
+			
 		} 
 		
 		if(numItems == 0){
@@ -83,6 +84,14 @@ public class List<T> {
 		l.addToEnd("Fred");
 		l.addToEnd("Betty");
 		l.addToEnd("Judith");
+		l.addToEnd("Fred");
+		l.addToEnd("Betty");
+		l.addToEnd("Judith");
+		l.addToEnd("Fred");
+		l.addToEnd("Betty");
+		l.addToEnd("Judith");
+		l.addToEnd("Fred");
+		;
 		System.out.println(l);
 				
 	}
